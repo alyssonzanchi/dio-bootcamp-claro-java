@@ -5,6 +5,7 @@ Este projeto foi desenvolvido como parte do desafio de controle de fluxo em Java
 ## 📝 Descrição do Desafio
 
 O desafio consiste em implementar uma lógica de contagem baseada em dois parâmetros fornecidos pelo usuário. O primeiro parâmetro deve ser menor que o segundo, e o programa deve lançar uma exceção customizada chamada `ParametrosInvalidosException` caso a condição não seja atendida.
+Para mais informações sobre o desafio, consulte o repositório oficial da DIO [aqui](https://github.com/digitalinnovationone/trilha-java-basico/tree/main/desafios/controle-fluxo).
 
 ## ⚙️ Funcionalidades
 
