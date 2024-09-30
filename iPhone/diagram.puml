@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class iPhone <<class>> {
+    +String modelo
+    +String cor
+    +double armazenamento
+    +iPhone(String modelo, String cor, double armazenamento)
+    +ligar(String numero)
+    +atender()
+    +exibirPagina(String url)
+    +tocar()
+    +adicionarNovaAba()
+}
+
+interface ReprodutorMusical <<interface>> {
+    +tocar()
+    +pausar()
+    +selecionarMusica(String musica)
+}
+
+interface AparelhoTelefonico <<interface>> {
+    +ligar(String numero)
+    +atender()
+    +iniciarCorreioVoz()
+}
+
+interface NavegadorInternet <<interface>> {
+    +exibirPagina(String url)
+    +adicionarNovaAba()
+    +atualizarPagina()
+}
+
+iPhone "1" --> "1..*" ReprodutorMusical
+iPhone "1" --> "1..*" AparelhoTelefonico
+iPhone "1" --> "1..*" NavegadorInternet
+
+@enduml
