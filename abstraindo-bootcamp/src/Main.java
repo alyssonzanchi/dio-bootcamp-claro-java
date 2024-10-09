@@ -1,7 +1,4 @@
-import br.com.dio.desafio.dominio.Bootcamp;
-import br.com.dio.desafio.dominio.Curso;
-import br.com.dio.desafio.dominio.Dev;
-import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -22,9 +19,16 @@ public class Main {
         mentoria.setDescricao("descrição mentoria java");
         mentoria.setData(LocalDate.now());
 
-//        System.out.println(curso1);
-//        System.out.println(curso2);
-//        System.out.println(mentoria);
+        Projeto projeto = new Projeto();
+        projeto.setTitulo("Projeto de API");
+        projeto.setDescricao("Construção de uma API RESTful");
+        projeto.setDuracao(5);
+
+        Desafio desafio = new Desafio();
+        desafio.setTitulo("Desafio de Algoritmos");
+        desafio.setDescricao("Resolver problemas de algoritmos.");
+        desafio.setNivelDificuldade("Médio");
+        desafio.setXpAdicional(15);
 
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("Bootcamp Java Developer");
@@ -32,11 +36,23 @@ public class Main {
         bootcamp.getConteudos().add(curso1);
         bootcamp.getConteudos().add(curso2);
         bootcamp.getConteudos().add(mentoria);
+        bootcamp.getConteudos().add(projeto);
+        bootcamp.getConteudos().add(desafio);
 
         Dev devAlysson = new Dev();
         devAlysson.setNome("Alysson");
         devAlysson.inscreverBootcamp(bootcamp);
+
+        Feedback feedback = new Feedback(devAlysson, curso1, 5, "Excelente curso!");
+        System.out.println(feedback);
+
+        Notificacao notificacao = new Notificacao("Novo conteúdo disponível!");
+        notificacao.adicionarDev(devAlysson);
+        notificacao.enviarNotificacoes();
+
         System.out.println("Conteúdos Inscritos Alysson" + devAlysson.getConteudosInscritos());
+        devAlysson.progredir();
+        devAlysson.progredir();
         devAlysson.progredir();
         devAlysson.progredir();
         System.out.println("-");
@@ -50,6 +66,8 @@ public class Main {
         devCamila.setNome("Camila");
         devCamila.inscreverBootcamp(bootcamp);
         System.out.println("Conteúdos Inscritos Camila" + devCamila.getConteudosInscritos());
+        devCamila.progredir();
+        devCamila.progredir();
         devCamila.progredir();
         devCamila.progredir();
         devCamila.progredir();
