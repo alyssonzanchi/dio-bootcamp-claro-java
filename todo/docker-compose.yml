@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=tarefasdb
+    volumes:
+      - tarefasdb_pg_data:/bitnami/postgresql
+
+volumes:
+  tarefasdb_pg_data:
